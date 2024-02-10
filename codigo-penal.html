@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7H9RWH352"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D7H9RWH352');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='content-language' content='pt-br'> 
+    <title>Código Penal - GTA RP</title>
+    <meta name="description"
+        content="Uma calculadora penal para Uai RP que auxilia no cálculo de penas e multas para diferentes crimes na  Cidade.">
+    <meta name="keywords"
+        content="calculadora penal, código penal Uai RP, Uai RP, penas em Uai RP, calculadora de penas,fivem, fiveM">
+    <!-- Adicione outras tags relevantes aqui, se necessário -->
+    <link rel="stylesheet" href="bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo CSS personalizado, se aplicável -->
+    <link rel="icon" href="assets/favicon.ico"> <!-- Ícone da página, se aplicável -->
+    <link rel="stylesheet" href="1.10.25/css/jquery.dataTables.min.css">
+
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Código Penal - UAi - Uai RP">
+        <meta property="og:description"
+            content="Uma calculadora penal para Uai RP que auxilia no cálculo de penas e multas para diferentes crimes no jogo.">
+        <meta property="og:image" content="img/logo_nova.png">
+        <meta property="og:url" content="codigo-penal.html">
+        <meta property="og:type" content="article">
+</head>
+
+<body>
+    <script src="js/mainheader.js"></script>
+
+    <div class="container">
+
+        <section id="codigo-penal">
+            <h1>Código Penal Uai</h1>
+            <p>Esta tabela lista todos os crimes possíveis no jogo, juntamente com as sentenças e multas correspondentes.</p>
+
+            <div class="table-responsive">
+                <table id="tabela-codigo-penal" class="display">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Crime</th>
+                            <th>Multa</th>
+                            <th>Sentença</th>
+                            <th>Direito a Fiança</th>
+                            <th>Valor da Fiança</th>
+                            <th>Categoria</th>
+                            <th>Definição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically generated -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- <div id="product-section"></div> -->
+
+    </div>
+
+    <script src="js/mainfooter.js"></script>
+
+    <!-- Add the required JavaScript libraries -->
+
+
+    <!-- <script src="jquery-3.6.0.min.js"></script>
+     -->
+    <script src="jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/codigo-penal.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#tabela-codigo-penal').DataTable({
+                "language": {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Mostrando de _START_ a _END_ de _TOTAL_ entradas",
+                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
+                    "sInfoFiltered": "(filtrado de _MAX_ entradas no total)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ",",
+                    "sLengthMenu": "Mostrar _MENU_ entradas",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sSearch": "Buscar:",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sLast": "Último",
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    },
+                    "select": {
+                        "rows": {
+                            "_": "Selecionado %d linhas",
+                            "0": "Nenhuma linha selecionada",
+                            "1": "Selecionado 1 linha"
+                        }
+                    }
+                }
+            });
+        });
+
+        for (var i = 0; i < codigoPenal.length; i++) {
+            var crime = codigoPenal[i];
+            var row = $('<tr>');
+
+            row.append($('<td>').text(crime.numero));
+            row.append($('<td>').text(crime.crime));
+            row.append($('<td>').text(crime.multa));
+            row.append($('<td>').text(crime.sentenca));
+            row.append($('<td>').text(crime.direito_a_fianca ? 'Sim' : 'Não'));
+            row.append($('<td>').text(crime.valor_fianca));
+            row.append($('<td>').text(crime.categoria));
+            row.append($('<td>').text(crime.definicao));
+            $('#tabela-codigo-penal tbody').append(row);
+        }
+
+    </script>
+
+    <!-- <script src="js/products.js"></script> -->
+</body>
+
+</html>

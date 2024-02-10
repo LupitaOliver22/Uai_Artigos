@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Wedges';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Wedges'), url('https://fonts.cdnfonts.com/s/37884/Wedges.woff') format('woff');
+}
+
+
